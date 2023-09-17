@@ -1,0 +1,25 @@
+/*NAVBAR*/
+
+nav{
+  background-color: #192A56;
+  position: fixed;
+  width: 100%;
+  top:0;
+  z-index: 100;
+}
+
+span {
+  color: #f5f5f5;
+}
+
+.section {
+  color: #f5f5f5;
+  border-radius: 2px;
+  padding: 2px 8px;
+  border: 1px solid #f5f5f5;
+  font-size: 16px;
+  cursor: pointer;
+}
+.col-4{
+  flex:0 0 29.333%;
+}

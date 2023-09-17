@@ -1,0 +1,68 @@
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
+<mat-toolbar>
+  <img class="logo" src="assets/img/conatus.png" alt="logo">
+</mat-toolbar>
+<div class="container-fluid">
+  <form [formGroup]="form" (ngSubmit)="form.valid && submit()">
+    <div class="form-container">
+      <div class="register-heading mt-2">
+        <h2>REGISTER</h2>
+      </div>
+      <div class="student-data">
+        <mat-form-field>
+          <input type="text" matInput placeholder="Name" formControlName="name">
+          <mat-error *ngIf="!form.get('name').valid">Please enter a valid name</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-select placeholder="Branch" formControlName="branch" name="branch">
+            <mat-option *ngFor="let branch of branches" [value]="branch">
+              {{branch}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="!form.get('branch').valid">Required Field</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input type="number" matInput placeholder="Student Number" formControlName="studentNumber">
+          <mat-error *ngIf="!form.get('studentNumber').valid">Please enter a valid credential</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input type="number" matInput placeholder="Roll Number" formControlName="rollNumber">
+          <mat-error *ngIf="!form.get('rollNumber').valid">Please enter a valid credential</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input type="number" matInput placeholder="Mobile Number" formControlName="phoneNumber">
+          <mat-error *ngIf="!form.get('phoneNumber').valid">Please enter a valid phone number</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input type="text" matInput placeholder="Email" formControlName="email">
+          <mat-error *ngIf="!form.get('email').valid">Please enter a valid email</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input type="text" matInput placeholder="Skills" formControlName="skills">
+          <mat-error *ngIf="!form.get('skills').valid">Required Field</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input type="text" matInput placeholder="Hackerrank Handle" formControlName="hackerrankHandle">
+          <mat-error *ngIf="!form.get('hackerrankHandle').valid">Required Field</mat-error>
+        </mat-form-field>
+      </div>
+      <!-- <div style="margin: 20px; display: flex; justify-content: center">
+        <ngx-recaptcha2 style="text-align: center" #captchaElem
+                        [siteKey]="'6Lf6ooAcAAAAAHKVxug6z0mwBQte0xEGU7DgfuVw'"
+                        (reset)="handleReset()"
+                        (expire)="handleExpire()"
+                        (load)="handleSuccess(true)"
+                        (success)="handleSuccess($event)"
+                        formControlName="recaptcha">
+        </ngx-recaptcha2>
+      </div> -->
+
+      <div class="submit-button mb-5">
+        <button mat-raised-button color="primary" type="submit">SUBMIT</button>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="footer">
+  <p>Powered by Team Conatus</p>
+</div>

@@ -1,0 +1,23 @@
+<div class="container">
+  <div>
+    <img alt="admin" src="assets/img/admin.png" width="100px" height="100px"/>
+  </div>
+  <div style="margin: 15px 0; font-size: 25px">
+    Admin Login
+  </div>
+  <div class="form">
+    <form [formGroup]="formGroup" (ngSubmit)="formGroup.valid && submit()">
+      <div>
+        <mat-form-field>
+          <input type="text" matInput placeholder="Username" formControlName="uname">
+        </mat-form-field>
+        <mat-form-field>
+          <input type="password" matInput placeholder="Password" formControlName="password">
+        </mat-form-field>
+        <div style="text-align: center">
+          <button mat-raised-button color="primary" type="submit">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

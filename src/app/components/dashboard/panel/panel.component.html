@@ -1,0 +1,29 @@
+<div class="test-grid__left">
+  <h4 class="heading">Question Overview:</h4>
+  <div class="question-number">
+    <div class="bubble-container">
+      <div class="bubble" *ngFor="let answer of answers; let i = index">
+        <button (click)="navigateToQuestion(answer.question)" [ngClass]="{'answered':answer.answer}">{{i+1}}</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="test-grid__nav">
+    <button class="test-grid__nav-btn ng-binding" (click)="finish()">FINISH</button>
+  </div>
+
+    <div class="guide-bubble">
+      <span class="circle-1">{{unAttemptedQuestions}}</span>
+      <span>Unattempted</span>
+    </div>
+    <div class="guide-bubble">
+      <span class="circle-2">{{attemptedQuestions}}</span>
+      <span>Attempted</span>
+    </div>
+
+
+<div class="note">
+  <p><span style="color:red; font-size:27px">*</span> Once Attempted response cannnot be <span style="margin-left:14px">cleared.</span></p>
+  </div>
+
+</div>

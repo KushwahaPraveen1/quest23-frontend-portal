@@ -1,0 +1,36 @@
+<!--NAVBAR-->
+
+<nav class="navbar navbar-light blue lighten-4">
+  <span class="navbar-brand text-white">QUEST'23</span>
+  <div class="section" (click)="scrollToSection('c-lang')">Programming</div>
+  <div class="section" (click)="scrollToSection('aptitude')">APTITUDE</div>
+  <div class="section" (click)="scrollToSection('html-css')">HTML/CSS</div>
+<!--  <div class="section" (click)="scrollToSection('java')">OOPS</div>-->
+    <div class="section" (click)="scrollToSection('sql')">SQL</div>
+  <header class="test_started">
+    <div class="global-nav_fixed style">
+
+      <div class="test-test__details">
+
+
+        <div class="test-timer__time ng-scope" ng-if="vm.timeLeft" style="color: white">
+          <span class="test_timer_default ng-binding" style="margin-right: 5px;">Time Left</span>
+          <span class="test_timer_default"> :  </span>
+          <span class="test_timer_time ng-binding">{{hours}}:{{minutes}}:{{seconds}}</span>
+        </div>
+      </div>
+    </div>
+  </header>
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4">
+      <app-panel></app-panel>
+    </div>
+    <div class="col-8">
+      <div id="test" onmousedown='return false;' onselectstart='return false;'>
+        <app-questions [questions]="questions"></app-questions>
+      </div>
+    </div>
+  </div>
+</div>

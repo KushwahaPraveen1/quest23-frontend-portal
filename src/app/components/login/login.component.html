@@ -1,0 +1,36 @@
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }"></ngx-loading>
+<mat-toolbar>
+Conatus Recruitment Portal
+</mat-toolbar>
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="form.valid && submit()">
+    <div class="form-container">
+      <div class="login-heading">
+        <h1>
+          Login
+        </h1>
+      </div>
+      <mat-form-field>
+        <input type="text" matInput placeholder="Email" formControlName="email">
+      </mat-form-field>
+      <mat-form-field>
+        <input type="password" matInput placeholder="Password" formControlName="password">
+      </mat-form-field>
+      <mat-form-field>
+        <input type="password" matInput placeholder="Master Password" formControlName="master_password">
+      </mat-form-field>
+      <div class="login-button">
+        <button mat-raised-button color="primary" type="submit">Log In</button>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="footer">
+  <p>
+    Powered by Team Conatus
+  </p>
+</div>
+
+
+
+
